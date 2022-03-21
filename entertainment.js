@@ -1,28 +1,19 @@
-import { StatusBar} from "expo-status-bar";
-import * as React from 'react';
-import {StyleSheet, Text, View, useWindowDimensions, FlatList} from "react-native";
-import { TabView, TabBar, SceneMap } from 'react-native-tab-view';
-import {Image, TouchableOpacity} from "react-native-web";
-import food from "./food";
-import entertainment from "./entertainment";
+import {StyleSheet, Text, useWindowDimensions} from "react-native";
+import * as React from "react";
+import {SceneMap, TabBar, TabView} from "react-native-tab-view";
+import movies from "./movies";
+import music from "./music";
 import { createMaterialTopTabNavigator} from "@react-navigation/material-top-tabs";
-import { NavigationContainer } from '@react-navigation/native';
 
-const pressHandler = (item) => {
-    alert(item.name + "\n\n" + item.description + "  " + item.cost)
-}
 const Tab = createMaterialTopTabNavigator();
-
-export default function DateNight() {
+export default function EntertainmentMenu () {
     return(
-        <NavigationContainer>
-            <Tab.Navigator style={styles.tabItems}>
-                <Tab.Screen name="Food" component={food} />
-                <Tab.Screen name="Entertainment" component={entertainment}/>
-            </Tab.Navigator>
-        </NavigationContainer>
+        <Tab.Navigator style={styles.tabItems}>
+            <Tab.Screen name="Movies" component={movies} />
+            <Tab.Screen name="Music" component={music}/>
+        </Tab.Navigator>
     )
-}
+};
 
 const styles = StyleSheet.create({
     container: {
