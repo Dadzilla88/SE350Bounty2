@@ -3,7 +3,6 @@ import * as React from "react";
 import breakfast from "./breakfast";
 import dinner from "./dinner";
 import { createMaterialTopTabNavigator} from "@react-navigation/material-top-tabs";
-import * as styles from './styles';
 
 const Tab = createMaterialTopTabNavigator();
 export default function FoodMenu () {
